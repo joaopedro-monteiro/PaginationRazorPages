@@ -1,15 +1,12 @@
-📄 Paginação em Razor Pages - Demonstração
-Este projeto demonstra como implementar um sistema de paginação eficiente em uma aplicação ASP.NET Core usando Razor Pages, incluindo indexação numérica das páginas para melhor navegação.
+# 📄 Pagination in Razor Pages
 
-✨ Funcionalidades Principais
-Paginação inteligente com PaginatedList<T>
+A demonstration of how to implement pagination in ASP.NET Core Razor Pages with page numbering and navigation controls.
 
-Navegação intuitiva entre páginas
+## ✨ Features
 
-Indexação numérica das páginas (1, 2, 3...)
-
-Controle flexível de itens por página
-
-UI responsiva com estilização moderna
-
-Navegação rápida (Primeira/Última página)
+- **Efficient pagination** using `PaginatedList<T>`
+- **Intuitive navigation** between pages
+- **Numbered page index** (1, 2, 3...)
+- **Customizable page size** (items per page)
+- **Responsive UI** with clean styling
+- **Quick navigation** (First/Last page buttons)
