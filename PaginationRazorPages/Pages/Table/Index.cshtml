@@ -1,0 +1,35 @@
+﻿@page
+@model PaginationRazorPages.Pages.Table.IndexModel
+@{
+}
+
+@* //TABELA AQUI *@
+
+@* INDEXAÇÃO DA PAGINAÇÃO *@
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item @(Model.Exemplo!.HasPreviousPage ? "" : "disabled")">
+            <a class="page-link" asp-route-pageIndex="1" aria-label="Previous" aria-disabled="@(Model.Exemplo.HasPreviousPage ? "true" : "false")">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        @{
+            var pageIndex = Model.Exemplo.PageIndex;
+            var totalPages = Model.Exemplo.TotalPages;
+
+            var firstIndex = Math.Max(1, pageIndex - 2);
+            var lastIndex = Math.Min(totalPages, pageIndex + 2);
+
+            for (int i = firstIndex; i <= lastIndex; i++)
+            {
+                <li class="page-item @(i == pageIndex ? "active" : "")"><a class="page-link" asp-route-pageIndex="@i">@i</a></li>
+            }
+        }
+        <li class="page-item @(Model.Exemplo.HasNextPage ? "" : "disabled")">
+            <a class="page-link" asp-route-pageIndex="@Model.Exemplo.TotalPages" aria-label="Next" aria-disabled="@(Model.Exemplo.HasNextPage ? "true" : "false")">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
